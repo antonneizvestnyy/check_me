@@ -11,4 +11,4 @@ mutableIssue.setComponent(components)
 
 comment_text="<TEXT>"
 comment = ComponentAccessor.getCommentManager()
-comment.create(issue, 'jirman', comment_text, true) 
+comment.create(issue, 'NAME_USERS_LOGGING', comment_text, true) 
