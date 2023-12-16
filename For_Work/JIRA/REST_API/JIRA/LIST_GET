@@ -1,0 +1,35 @@
+# чтобы не потерять для себя GET
+# некоторые запросы работают только когда был осуществен вход
+
+-посмотреть все проекты
+<DOMAIN_NAME>/rest/api/2/project
+
+-посмотреть задачи
+<DOMAIN_NAME>/rest/api/2/issue/createmeta
+
+-посмотреть список кто входит в группу
+<DOMAIN_NAME>/rest/api/2/group/member?groupname=jira-administrators
+
+-посмотреть про пользователя
+<DOMAIN_NAME>/rest/api/2/user?username=<USER>
+
+-посмотреть проект
+<DOMAIN_NAME>/rest/api/2/search?project=JIRA
+
+-поиск по JQL
+<DOMAIN_NAME>/rest/api/2/search?jql=project=JIRA
+
+-посмотреть задачу
+<DOMAIN_NAME>/rest/api/2/issue/REST-1
+
+-посмотреть схему ид 
+<DOMAIN_NAME>/rest/api/2/project/JIRA/notificationscheme
+
+-посмотреть схему ид
+<DOMAIN_NAME>/rest/api/2/project/JIRA/permissionscheme
+
+-посмотреть акк
+<DOMAIN_NAME>/rest/api/2/myself
+
+-посмотреть все типы задач
+<DOMAIN_NAME>/rest/api/2/issuetype
