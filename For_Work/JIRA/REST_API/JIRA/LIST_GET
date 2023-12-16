@@ -14,19 +14,19 @@
 <DOMAIN_NAME>/rest/api/2/user?username=<USER>
 
 -посмотреть проект
-<DOMAIN_NAME>/rest/api/2/search?project=JIRA
+<DOMAIN_NAME>/rest/api/2/search?project=<PROJECT>
 
 -поиск по JQL
-<DOMAIN_NAME>/rest/api/2/search?jql=project=JIRA
+<DOMAIN_NAME>/rest/api/2/search?jql=project=<PROJECT>
 
 -посмотреть задачу
-<DOMAIN_NAME>/rest/api/2/issue/REST-1
+<DOMAIN_NAME>/rest/api/2/issue/<ISSUE_KEY>
 
 -посмотреть схему ид 
-<DOMAIN_NAME>/rest/api/2/project/JIRA/notificationscheme
+<DOMAIN_NAME>/rest/api/2/project/<KEY>/notificationscheme
 
 -посмотреть схему ид
-<DOMAIN_NAME>/rest/api/2/project/JIRA/permissionscheme
+<DOMAIN_NAME>/rest/api/2/project/<KEY>/permissionscheme
 
 -посмотреть акк
 <DOMAIN_NAME>/rest/api/2/myself
