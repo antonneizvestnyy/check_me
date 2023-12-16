@@ -11,7 +11,7 @@ customFieldValue = issue.getCustomFieldValue(customField);
 if (customField.name == 'NAME_COMPONENT'){   // выбрать компонент
 
         switch (customFieldValue.toString()) {
-            case['HR']:
+            case['IF_VALUE']:
                     def userManager = ComponentAccessor.getUserManager()
                     def watcherManager = ComponentAccessor.getWatcherManager()
 
