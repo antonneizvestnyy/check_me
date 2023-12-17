@@ -1,0 +1,42 @@
+#утилита ssh
+
+#example
+
+ssh login@<IP_ADDRESS>
+
+---------конфигурационные файлы серверной части
+#можно запретить аутентификацию по паролю и использовать ключ
+
+# /etc/ssh/ssh_config
+
+#рекомендую тут отключать root
+#можно запретить аутентификацию по паролю и использовать ключ
+
+#example
+
+PermitRootLogin no -- enabled
+PubkeyAuthentication yes
+PasswordAuthentication no
+sudo systemctl restart sshd
+
+---конфигурационные файлы клиентской части
+
+#может отсутствовать
+
+# ~/.ssh/config
+
+#example
+
+Host <HOSTNAME>
+<TAB> HostName <DOMAIN_NAME> or <IP_ADDRESS>
+<TAB> User <USER_NAME>
+<TAB> Port <PORT>
+<TAB> IdentityFile <PATH_TO_FILE.key>
+
+-------ssh-keygen 
+#создать пару ключей для входа не набирай пароль
+
+example
+
+ssh-keygen -t rsa -b 4096
+ssh-copy -i ~/.ssh/<NAME>.pub <USER>@<IP_ADDRESS>/<PATH_TO_FILE>/.ssh/<NAME>.pub
