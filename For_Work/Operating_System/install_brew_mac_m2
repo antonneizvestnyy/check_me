@@ -1,0 +1,19 @@
+#install brew for mac m2
+#инструкция чтобы не потерять
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+vim ~/.zshrc
+
+#добавить в файле
+export PATH=/opt/homebrew/bin:$PATH
+
+#далее
+
+source ~/.zshrc
+
+brew help
+
+#done
+
+
