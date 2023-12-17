@@ -1,0 +1,71 @@
+#базовые команды для диагностики сети
+#что то еще добавлю позже
+
+------------IP--------------
+
+---------Windows--------
+
+ipconfig /all
+
+--------macOS/linux-----
+
+ip a
+
+-------------PING--------------
+
+-----------Windows-----------
+
+ping <HOST_ADDRESS>
+ping <HOST_ADDRESS> -t
+
+----------macOS/linux--------
+
+ping <HOST_ADDRESS> -c <VALUE>
+ping <HOST_ADDRESS>
+
+-----------TELNET-------------
+
+----------Windows------------
+
+telnet <HOST_ADDRESS> <PORT>
+powershell: tnc <HOST_ADDRESS> -port <PORT>
+
+----------macOS/linux--------
+
+nc -vz <HOST_ADDRESS> <PORT> ---TCP
+nc -uv <HOST_ADDRESS> <PORT> ----UDP
+
+----------TRACEROUTE----------
+
+--------Windows----------
+
+tracert <HOST_ADDRESS>
+
+---------macOS/linux-----
+
+traceroute <HOST_ADDRESS>
+
+
+--------Clear cache DNS---------
+
+--------Windows---------
+
+ipconfig /flushdns
+
+------macOS/linux-------
+
+перезапуск службы
+
+
+------Проверка запись DNS-------
+#CNAME #AAAA #TXT #A #MX
+
+-----------Windows----------
+
+nslookup <HOST_ADDRESS>
+
+--------macOS/linux--------
+
+dig <HOST_ADDRESS>
+
+
