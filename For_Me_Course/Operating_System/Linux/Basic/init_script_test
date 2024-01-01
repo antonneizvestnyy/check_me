@@ -1,0 +1,37 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:             <NAME>
+# Required-Start:       $remote_fs $syslog
+# Required-Stop:        $remote_fs $syslog
+# Default-Start:        2 3 4 5
+# Default-Stop:         
+# Short-Description:    <Description>
+### END INIT INFO
+
+
+SCRIPT="<SCRIPT>"
+USER="<NAME>"
+
+PIDFILE=<PATH>.pid
+LOGFILE=<PATH>.log
+
+start() {
+        if [ -f "$PIDFILE" ] && kill -0 $(cat "$PIDFILE"); then
+        echo 'Сервис уже в работе' >&2
+        return 1
+        fi
+        echo 'Запуск сервиса...' >&2
+        local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
+        su -c "$CMD" $USER > "$PIDFILE"
+        echo 'Сервис запущен' >&2
+}
+
+stop() {
+        if [ -f "$PIDFILE" ] || ! kill -0 $(cat "$PIDFILE"); then
+        echo 'Сервис не в работе' >&2
+        return 1
+        fi
+        echo 'Остановка сервиса...' >&2
+        kill -15 $(cat "$PIDFILE") && rm -f "$PIDFILE"
+
