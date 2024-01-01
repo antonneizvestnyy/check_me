@@ -34,4 +34,18 @@ stop() {
         fi
         echo 'Остановка сервиса...' >&2
         kill -15 $(cat "$PIDFILE") && rm -f "$PIDFILE"
+        echo 'Сервис остановлен' >&2
+}
+case "$1" in
+start)
+start
+;;
+stop)
+stop
+;;
+)
+echo "Используйте: $0 {start|stop}"
+esac
 
+#проверить:
+#ps -aux | grep <NAME>
