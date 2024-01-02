@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# проверка сети на минималках
+# несколько проверок на заполненность строк и ответов
+
+echo "Привет! Как тебя зовут?"
+read username
+
+if [ -z "$username" ]; then
+echo "Привет, USER!"
+else
+echo "Привет, ${username}!"
+fi
+
+cat << _EOF_
+Давай проверим сеть?!Напиши Да или Нет.
+_EOF_
+
+read ANSWER
+
+SCRIPT="ping -c 10 <ADDRESS>"
+
+if [ -z "$ANSWER" ]; then
+echo "Ничего не набрал, выхожу!" >&2
+exit 1
+fi
+if [ "$ANSWER" == "Да" ]; then
+echo "Проверяю, подожди"
+$SCRIPT
+elif ["$ANSWER" == "Нет"]; then
+echo "Ок, в другой раз!"
+else
+echo "Был другой ответ, пока."
+fi
