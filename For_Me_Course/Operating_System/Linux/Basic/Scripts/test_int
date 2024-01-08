@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#Проверка диапозон чисел
+#функция
+
+test () {
+local var=$1
+        if [ "$var" -ge 10 ] && [ "$var" -le 14 ];then
+                echo "OK"
+        else
+                echo "NE OK" 2>&1
+        fi
+}
+test $1 

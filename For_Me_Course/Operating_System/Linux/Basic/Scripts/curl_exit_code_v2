@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#функиця, которая проверяет статус выхода curl! Не сервера Внимательно!
+#проверяет существование файла - не нужно 
+cat << _EOF_
+Привет $USER! 
+_EOF_
+
+get_changelog () {
+        
+        local cmd=$(curl $1 &>/dev/null;echo $?)
+
+        if (( $cmd == 0 )); then
+                curl -s $1 -o <PATH>
+                local file="<PATH>"
+                if [ -f $file ]; then
+                #проверка существование файла
+                        if (( $(cat $file | wc -l) == 0 )); then
+                        #проверка строки в файле
+                                echo "В файле нет строк!"
+                        else
+                                #выводи 1 строку файла
+                                cat $file | head -n 1
+                        fi
+
+                else
+                       echo "Файл не существует"
+                fi
+
+        else
+                echo "curl статус: $cmd"
+                exit 1
+        fi
+}
+
+get_changelog $1

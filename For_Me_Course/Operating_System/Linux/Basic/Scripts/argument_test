@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo $#
+#проверяем кол-во аргументов
+if [ $# -eq 1 ]; then
+#проверяем существует директория с этим значением   
+    if [ -d $1 ]; then
+        echo "OK"
+    else
+        echo "NO OK"
+    fi
+else
+    echo "ERROR" 2>&1
+    exit 1
+fi
+
+# проверка:
+# ./scripts.sh <кол-во аргументов>
+# echo $?
