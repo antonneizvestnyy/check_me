@@ -3,20 +3,12 @@
 # проверка сети на минималках
 # несколько проверок на заполненность строк и ответов
 
-echo "Привет! Как тебя зовут?"
-read username
-
-if [ -z "$username" ]; then
-echo "Привет, USER!"
-else
-echo "Привет, ${username}!"
-fi
-
-cat << _EOF_
-Давай проверим сеть?!Напиши Да или Нет.
+cat << _EOF_ 
+"Привет $USER! Проверим Интернет?"
 _EOF_
 
-read ANSWER
+
+read -p "Напиши yes или no: " ANSWER
 
 SCRIPT="ping -c 10 <ADDRESS>"
 
@@ -24,10 +16,10 @@ if [ -z "$ANSWER" ]; then
 echo "Ничего не набрал, выхожу!" >&2
 exit 1
 fi
-if [ "$ANSWER" == "Да" ]; then
+if [ "$ANSWER" == "yes" ]; then
 echo "Проверяю, подожди"
 $SCRIPT
-elif ["$ANSWER" == "Нет"]; then
+elif [ "$ANSWER" == "no" ]; then
 echo "Ок, в другой раз!"
 else
 echo "Был другой ответ, пока."
