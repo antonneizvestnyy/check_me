@@ -1,0 +1,18 @@
+#!/bin/bash
+# Пишем число
+N=6
+ 
+a=0
+b=1 
+  
+echo -n "Числа Фибоначчи : "
+  
+for (( i=0; i<N; i++ ))
+do
+    echo -n "$a "
+    f=$((a + b))
+    a=$b
+    b=$f
+done
+# End of for loop
+
