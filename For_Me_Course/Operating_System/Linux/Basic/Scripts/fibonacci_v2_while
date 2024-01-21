@@ -1,0 +1,20 @@
+#!/bin/bash
+ 
+fibonacci () {
+    max=$1
+    a=0
+    b=1 
+    echo -n "Все варианты до числа $max: "
+ 
+    while [ $a -le $max ]
+    do
+        echo -n "$a "
+        f=$((a + b))
+        a=$b
+        b=$f
+    done
+}
+ 
+# Main script
+read -p "Наберите число: " max_number
+fibonacci $max_number

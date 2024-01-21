@@ -1,0 +1,17 @@
+#!/bin/bash
+
+filename=text
+
+test2 () {
+count=0
+while IFS= read line
+do
+    (( count++ ))
+    if ((  $((count % 2)) == 0 )); then
+        echo $count
+    fi
+   
+done < $filename
+}
+
+test2

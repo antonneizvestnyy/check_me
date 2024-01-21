@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#Проверка на исполняемый файл в директории
+
+
+
+folder () {
+    local IFS=
+    local folder=$1
+    for file in $folder/*; do
+        if [ -d $1 ];then
+            if [ -x $file ]; then
+                if ! [ -d $file ]; then
+                    echo $file
+                fi
+            fi
+        else
+            echo "Это не папка!" 
+            exit 1
+        fi
+    done
+
+}
+folder $1

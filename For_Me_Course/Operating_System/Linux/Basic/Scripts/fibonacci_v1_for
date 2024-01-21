@@ -1,0 +1,20 @@
+#!/bin/bash
+ 
+# Function to print Fibonacci Sequence
+fibonacci() {
+    num=$1
+    a=0
+    b=1 
+    echo -n "Ответ из $num будет: "
+ 
+    for (( i=0; i<num; i++ ))
+    do
+        echo -n "$a "
+        f=$((a + b))
+        a=$b
+        b=$f
+    done
+}
+ 
+read -p "Введите кол-во чисел Фибоначчи: " 
+fibonacci $REPLY 
