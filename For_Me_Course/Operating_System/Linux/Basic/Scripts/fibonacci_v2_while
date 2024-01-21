@@ -15,6 +15,5 @@ fibonacci () {
     done
 }
  
-# Main script
 read -p "Наберите число: " max_number
 fibonacci $max_number

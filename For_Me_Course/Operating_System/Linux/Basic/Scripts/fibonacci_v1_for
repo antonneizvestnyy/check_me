@@ -1,7 +1,7 @@
 #!/bin/bash
  
 # Function to print Fibonacci Sequence
-fibonacci() {
+fibonacci () {
     num=$1
     a=0
     b=1 
