@@ -1,0 +1,19 @@
+#!/bin/bash
+ 
+fibonacci () {
+    N=$1
+    a=1
+    b=1 
+    echo "Все варианты, которые ниже заданного числа $N: "
+ 
+    while [ $a -le $N ]; do
+        printf '%s\n' "$a " #обязательно выше условия тк проверяется значение $a
+        f=$((a + b))
+        a=$b
+        b=$f
+        #printf '%s\n' "$a "
+    done
+}
+ 
+read -p "Наберите число: "
+fibonacci $REPLY
