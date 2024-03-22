@@ -7,7 +7,7 @@ class Kassa():
 
     def top_up(self, x):
         self.get_buy += x
-        return f"в кассе {x}"
+        return f"в кассе {self.get_buy}"
 
     def count_1000(self):
         return self.get_buy // 1000
