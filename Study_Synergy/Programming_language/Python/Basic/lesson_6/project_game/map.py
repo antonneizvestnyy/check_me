@@ -13,8 +13,8 @@ from utils import randbool, randcell, randcell2
 
 CELL_TYPES = '🟩🎄🌊🏥🏪🔥'
 TREE_BONUS = 100
-UPGRADE_COST = 5000
-LIFE_COST = 5000
+UPGRADE_COST = 1000
+LIFE_COST = 1000
 
 class Map:
 
